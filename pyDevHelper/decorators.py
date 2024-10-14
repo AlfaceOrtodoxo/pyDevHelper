@@ -67,15 +67,16 @@ class FunctionEnchancers:
             fx = func(*a)
             cache[a] = fx
             return fx
+        return wrapper
 
 @datac.dataclass
 class Validators:
 
     def strValidator(func):
         def wrapper(*a: str, **k: str):
-            validation_pos = all(arg.isalnum() for arg in a)
-            validation_named = all(kwarg.isalnum() for kwarg in k)
-            if validation_pos and validation_named == True:
+            validation_pos = all(isinstance(arg, str) for arg in a)
+            validation_named = all(isinstance(kwarg, str) for kwarg in k)
+            if validation_pos and validation_named:
                 print('Parameters Type OK.')
                 time.sleep(2)
                 fx = func(*a, **k)
@@ -88,7 +89,7 @@ class Validators:
         def wrapper(*a: int, **k: int):
             validation_pos = all(arg.is_integer() for arg in a)
             validation_named = all(kwarg.is_integer() for kwarg in k)
-            if validation_pos and validation_named == True:
+            if validation_pos and validation_named:
                 print('Parameters are Ok.')
                 time.sleep(2)
                 fx = func(*a, **k)

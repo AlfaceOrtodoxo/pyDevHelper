@@ -1,7 +1,7 @@
 from pyDevHelper import decorators as dc
 
 
-#@dc.FunctionEnchancers.logFunction
+@dc.Validators.strValidator
 def add(x: float, y: float):
     return x + y
 
