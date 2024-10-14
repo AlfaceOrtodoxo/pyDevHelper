@@ -5,6 +5,7 @@ import dataclasses as datac
 @datac.dataclass
 class FunctionEnchancers:
     def timeDelta(func):
+        '''This method returns the amount of time it took to execute the function.'''
         def wrapper(*a, **k):
             t0 = time.time()
             fx = func(*a, **k)
@@ -42,9 +43,10 @@ class FunctionEnchancers:
                     fx = func(*a, **k)
                     return fx
                 except Exception as e:
-                    print('An error has occurred. Please try again later.')
-                return e
-            return wrapper
+                    print(f'{c + 1}: An error has occurred. Please try again later.')
+                    last_exception = e
+            return last_exception
+        return wrapper
         
     def logFunction(func):
         log = []

@@ -6,11 +6,13 @@ def add(x: float, y: float):
     return x + y
 
 
-@dc.Validators.boolValidator
-def retrn(x: bool):
+@dc.FunctionEnchancers.retryFunction
+def example_function(x):
+    if x < 5:
+        raise ValueError("x is too small!")
     return x
 
-print(add(2,3))
+print(example_function(3))
 
 '''string = 'nome'
 
