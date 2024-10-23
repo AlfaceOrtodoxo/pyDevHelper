@@ -42,7 +42,6 @@ This decorator warns that the function is deprecated and prompts the user to dec
 ```
 ### underDevFunction
 ```python
-Copiar código
 @FunctionEnchancers.underDevFunction
 def my_function():
     # Your code here
@@ -50,7 +49,6 @@ Similar to deprecFunction, this decorator informs the user that the function is 
 ```
 ### retryFunction
 ```python
-Copiar código
 @FunctionEnchancers.retryFunction
 def my_function():
     # Your code here
@@ -58,7 +56,6 @@ This decorator attempts to execute the function up to 5 times in case an excepti
 ```
 ### logFunction
 ```python
-Copiar código
 @FunctionEnchancers.logFunction
 def my_function():
     # Your code here
@@ -66,7 +63,6 @@ This decorator logs the date and time of the function execution, along with the 
 ```
 ### cacheFunction
 ```python
-Copiar código
 @FunctionEnchancers.cacheFunction
 def my_function():
     # Your code here
