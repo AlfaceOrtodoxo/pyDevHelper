@@ -32,84 +32,79 @@ This module contains decorators that enhance the functionality of a function by 
 def my_function():
     # Your code here
 This decorator measures the time taken for the function to execute and prints the duration in seconds.
-
-deprecFunction
-python
-Copiar código
+```
+### deprecFunction
+```python
 @FunctionEnchancers.deprecFunction
 def my_function():
     # Your code here
 This decorator warns that the function is deprecated and prompts the user to decide whether to continue, indicating that the results may be inaccurate.
-
-underDevFunction
-python
+```
+### underDevFunction
+```python
 Copiar código
 @FunctionEnchancers.underDevFunction
 def my_function():
     # Your code here
 Similar to deprecFunction, this decorator informs the user that the function is under development and asks whether they wish to proceed.
-
-retryFunction
-python
+```
+### retryFunction
+```python
 Copiar código
 @FunctionEnchancers.retryFunction
 def my_function():
     # Your code here
 This decorator attempts to execute the function up to 5 times in case an exception is raised. If all attempts fail, the last exception is returned.
-
-logFunction
-python
+```
+### logFunction
+```python
 Copiar código
 @FunctionEnchancers.logFunction
 def my_function():
     # Your code here
 This decorator logs the date and time of the function execution, along with the arguments passed, and returns a log containing these details.
-
-cacheFunction
-python
+```
+### cacheFunction
+```python
 Copiar código
 @FunctionEnchancers.cacheFunction
 def my_function():
     # Your code here
 This decorator implements caching for the function results. If the function is called again with the same parameters, the cached value is returned instead of recalculating the result.
-
-Validators
+```
+## Validators
 This module contains validator decorators that check if the parameters of a function meet specific type requirements, such as str, int, float, or bool.
 
-strValidator
-python
-Copiar código
+### strValidator
+```python
 @Validators.strValidator
 def my_function(*args, **kwargs):
     # Your code here
 This decorator ensures that all parameters are strings. If not, it returns an error message.
-
-intValidator
-python
-Copiar código
+```
+### intValidator
+```python
 @Validators.intValidator
 def my_function(*args, **kwargs):
     # Your code here
 This decorator validates that all parameters are integers.
-
-floatValidator
-python
-Copiar código
+```
+### floatValidator
+```python
 @Validators.floatValidator
 def my_function(*args, **kwargs):
     # Your code here
 This decorator checks if the parameters are floats. Booleans and integers are treated as invalid.
-
-boolValidator
-python
-Copiar código
+```
+### boolValidator
+```python
 @Validators.boolValidator
 def my_function(*args, **kwargs):
     # Your code here
 This decorator verifies that all parameters are booleans (True or False).
 ```
 
-Installation
+## Installation
 To use these decorators in your Python project, follow these steps:
 
 Clone this repository:
